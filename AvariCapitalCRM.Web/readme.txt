@@ -20,7 +20,7 @@ truncate table [dbo].[SMSMessageLog]
 
 truncate table[dbo].[DistributorMediaFile] 
 
-
+truncate table [dbo].[DistributorMediaFile] 
 layui 多文件上传：
 http://www.jq22.com/jquery-info21976
 
