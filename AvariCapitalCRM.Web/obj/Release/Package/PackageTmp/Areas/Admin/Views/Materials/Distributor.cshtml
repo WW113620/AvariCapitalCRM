@@ -1,0 +1,241 @@
+﻿@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+}
+<style>
+    .layui-form-label {
+        width: 120px;
+    }
+</style>
+<fieldset class="layui-elem-field layui-field-title layui-list-title">
+    <legend>Materials list</legend>
+</fieldset>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-card">
+            <div class="layui-form layuiadmin-card-header-auto">
+
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">First category</label>
+                        <div class="layui-input-inline">
+                            <select name="FirstCateId" lay-filter="FirstCateId" id="FirstCateId">
+                                <option value="">Please select</option>
+                                @{
+                                    var categoryList = ViewBag.CategoryList as List<Category>;
+                                    if (categoryList != null && categoryList.Any())
+                                    {
+                                        foreach (var item in categoryList)
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">Second  category</label>
+                        <div class="layui-input-inline">
+                            <select name="SecondCateId" lay-filter="SecondCateId" id="SecondCateId">
+                                <option value="">Please select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">Third category</label>
+                        <div class="layui-input-inline">
+                            <select name="ThirdCateId" lay-filter="ThirdCateId" id="ThirdCateId">
+                                <option value="">Please select</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">Category Name</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="Name" placeholder="Category name" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    
+                    <div class="layui-inline" style="margin-left:90px;">
+                        <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="LAY-user-front-search">
+                            <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                        </button>
+                    </div>
+
+                  
+                </div>
+            </div>
+
+            <div class="layui-card-body">
+
+                <table id="LAY-table-list" lay-filter="LAY-table-list"></table>
+
+                <script type="text/html" id="table-operation">
+
+                    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-href="{{layui.setter.baseUrl}}Materials/View/{{d.Id}}" lay-text="View material">View</a>
+
+                </script>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script>
+
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index', 'layer', 'table'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , table = layui.table
+            , layer = layui.layer //弹层
+            , laydate = layui.laydate;
+
+        table.render({
+            elem: '#LAY-table-list'
+            , url: layui.setter.baseUrl + 'Materials/GetList'
+            , cols: [[
+                { field: 'Id', width: 80, align: 'center', title: 'ID' }
+                , { field: 'Name', width: 260, title: 'Material Name' }
+                , { field: 'Description', minWidth: 300, title: 'Material Description' }
+                , { field: 'ShowCategoryName', minWidth: 350, title: 'Category Name' }
+                , {
+                    field: 'StatusName', title: 'State', width: 150, templet: function (d) {
+                        if (d.Status === 0) {
+                            return '<span style="color:#FF4500;">' + d.StatusName + '</span>';
+                        }
+                        else if (d.Status === 1) {
+                            return '<span style="color:#008000;">' + d.StatusName + '</span>';
+                        }
+                        else {
+                            return '<span style="color:#c00;">' + d.StatusName + '</span>';
+                        }
+
+                    }
+                }
+                , { field: 'AddDateValue', width: 150, title: 'Add Time' }
+                , { title: 'Operation', width: 120, align: 'center', fixed: 'right', toolbar: '#table-operation' }
+            ]]
+            , page: true
+            , limit: 10
+            , text: {
+                none: 'No data'
+            }
+        });
+
+
+        //监听工具条
+        table.on('tool(LAY-table-list)', function (obj) {
+            var data = obj.data;
+            var id = data.Id;
+            var status = data.Status;
+            if (obj.event === 'del') {
+               
+
+            }
+            else if (obj.event === 'publish') {
+               
+
+            } else if (obj.event === 'down') {
+                
+            }
+            else if (obj.event === 'view') {
+
+              
+            }
+
+        });
+
+
+        //监听分类
+        form.on("select(FirstCateId)", function (data) {
+            var parentId = data.elem[data.elem.selectedIndex].value;
+            initCateList(parentId, "#SecondCateId");
+            initCateList("", "#ThirdCateId");
+        })
+        form.on("select(SecondCateId)", function (data) {
+            var parentId = data.elem[data.elem.selectedIndex].value;
+            initCateList(parentId, "#ThirdCateId");
+        })
+
+        form.on("select(ThirdCateId)", function (data) {
+            var parentId = data.elem[data.elem.selectedIndex].value;
+        })
+
+        function initCateList(parentId, el) {
+
+            var catestr = "Please select";
+            var selectedId = 0;
+            switch (el) {
+                case "#SecondCateId":
+                    catestr = "Please select";
+                    selectedId = $("#hidSecondCateId").val();
+                    break;
+                case "#ThirdCateId":
+                    catestr = "Please select";
+                    selectedId = $("#hidThirdCateId").val();
+                    break;
+            }
+            var html = "<option   value=''>" + catestr + "</option>";
+            if (!parentId) {
+                $(el).html(html);
+                form.render('select');
+                return false;
+            }
+
+            $.post(layui.setter.baseUrl + "Materials/GetCateListByParentId", { parentId: parentId }, function (res) {
+                if (res.code == 0) {
+                    for (var i = 0; i < res.data.length; i++) {
+                        var item = res.data[i];
+                        html += "<option value='" + item.Id + "'>" + item.Name + "</option>";
+                    }
+                    $(el).html(html);
+                }
+                else {
+                    $(el).html(html);
+                }
+
+                form.render('select');
+
+            })
+        }
+
+        //监听搜索
+        form.on('submit(LAY-user-front-search)', function (data) {
+            var field = data.field;
+
+            //执行重载
+            table.reload('LAY-table-list', {
+                where: field
+            });
+        });
+
+      //列表外按钮点击事件
+      var active = {
+
+        add: function () {
+
+        }
+    };
+
+    $('.layui-btn.layuiadmin-btn-useradmin').on('click', function(){
+      var type = $(this).data('type');
+      active[type] ? active[type].call(this) : '';
+    });
+
+
+    });
+</script>
+

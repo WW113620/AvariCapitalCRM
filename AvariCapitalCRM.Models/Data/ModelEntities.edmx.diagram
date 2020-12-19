@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4e096dd6341b4625a6372ff15b512884" Name="Diagram1">
+        <EntityTypeShape EntityType="AvariCapitalCRMDBModel.SMSMessageLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvariCapitalCRMDBModel.TestUser" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvariCapitalCRMDBModel.Category" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="AvariCapitalCRMDBModel.Role" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AvariCapitalCRMDBModel.DownloadLog" Width="1.5" PointX="7.25" PointY="4.75" />
+        <EntityTypeShape EntityType="AvariCapitalCRMDBModel.DistributorMediaFile" Width="1.5" PointX="9.375" PointY="4.75" />
+        <EntityTypeShape EntityType="AvariCapitalCRMDBModel.MediaFile" Width="1.5" PointX="3.375" PointY="7.75" />
+        <EntityTypeShape EntityType="AvariCapitalCRMDBModel.Account" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="AvariCapitalCRMDBModel.Material" Width="1.5" PointX="5.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,81 @@
+﻿
+CREATE TABLE [dbo].[Account](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL primary key,
+	[UserName] [nvarchar](100) NULL,
+	[Password] [nvarchar](100) NULL,
+	[PasswordSalt] [nvarchar](50) NULL,
+	[FirstName] [nvarchar](100) NULL,
+	[LastName] [nvarchar](100) NULL,
+	[Phone] [nvarchar](20) NULL,
+	[Email] [nvarchar](100) NULL,
+	[AvatarFileName] [nvarchar](100) NULL,
+	[RoleId] [int] NOT NULL DEFAULT ((0)),
+	[State] [int] NOT NULL DEFAULT ((0)),
+	[AddTime] [datetime] NOT NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[Category](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL primary key,
+	[Name] [varchar](100) NULL,
+	[ParentId] [bigint] NOT NULL DEFAULT ((0)),
+	[Level] [int] NOT NULL DEFAULT ((1))
+)  ON [PRIMARY]
+
+CREATE TABLE [dbo].[MediaFile](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL primary key,
+	[MaterialId] [bigint] NOT NULL DEFAULT ((1)),
+	[MediaType] [int] NOT NULL DEFAULT ((1)),
+	[NewFileName] [nvarchar](100) NULL,
+	[OriginalFileName] [nvarchar](200) NULL,
+	[MediaSize] [bigint] NULL,
+	[MediaSort] [int] NOT NULL,
+	[MediaCloudId] [nvarchar](100) NULL,
+	[AddTime] [datetime] NOT NULL,
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Materials](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL primary key,
+	[Name] [nvarchar](200) NULL,
+	[CategoryId] [bigint] NOT NULL,
+	[Description][nvarchar](2000) NULL,
+	[AddTime] [datetime] NOT NULL,
+) ON [PRIMARY]
+GO
+
+
+CREATE TABLE [dbo].[Role](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL primary key,
+	[RoleName] [nvarchar](100) NULL,
+	[Permissions] [nvarchar](500) NULL,
+	[Remark] [nvarchar](500) NULL,
+	[IsDel] [int] NOT NULL DEFAULT ((0)),
+	[AddTime] [datetime]NOT NULL,
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[DownloadLog](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL primary key,
+	[UserId] [bigint] NOT NULL DEFAULT ((0)),
+	[UserName] [nvarchar](100) NULL,
+    [MaterialId] [bigint] NOT NULL DEFAULT ((0)),
+    [MediaFileId] [bigint] NOT NULL DEFAULT ((0)),
+	[MediaFileName] [nvarchar](200) NULL,
+	[AddTime] [datetime]NOT NULL,
+) ON [PRIMARY]
+
+
+
+  CREATE TABLE [dbo].[DistributorMediaFile](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL primary key,
+	[UserId] [bigint] NOT NULL ,
+	[MediaType] [int] NOT NULL DEFAULT ((1)),
+	[NewFileName] [nvarchar](100) NULL,
+	[OriginalFileName] [nvarchar](200) NULL,
+	[MediaSize] [bigint] NULL,
+	[MediaSort] [int] NOT NULL,
+	[MediaCloudId] [nvarchar](100) NULL,
+	[Remark] [nvarchar](1000) NULL,
+	[AddTime] [datetime] NOT NULL,
+) ON [PRIMARY]
+GO

@@ -1,0 +1,195 @@
+﻿@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+}
+<style>
+    .layui-form-label {
+     width:120px;
+    }
+</style>
+<fieldset class="layui-elem-field layui-field-title layui-list-title">
+    <legend>Files list</legend>
+</fieldset>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-card">
+            <div class="layui-form layuiadmin-card-header-auto">
+                <div class="layui-form-item">
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">Distributor name</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="UserName" autocomplete="off" placeholder="Distributor name" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">File name</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="FileName" autocomplete="off" placeholder="File name" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline" style="margin-left:60px;">
+                        <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="LAY-user-front-search">
+                            <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="layui-card-body">
+
+                <table id="LAY-table-list" lay-filter="LAY-table-list"></table>
+
+                <script type="text/html" id="table-operation">
+                    {{# if(d.MediaType==@((int)MediaTypeEnums.图片)){ }}
+                    <a class="layui-btn layui-btn-xs" lay-event="view"><i class="layui-icon">&#xe64a;</i>View</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="download" href="@Url.Content("~/Admin/DistributorUpload/Download/"){{d.Id}}">Download</a>
+                    {{# }else if(d.MediaType==@((int)MediaTypeEnums.视频)){ }}
+                    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="play"><i class="layui-icon">&#xe6ed;</i>Play</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="download" href="@Url.Content("~/Admin/DistributorUpload/Download/"){{d.Id}}">Download</a>
+                    {{# }  else { }}
+                    <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="download" href="@Url.Content("~/Admin/DistributorUpload/Download/"){{d.Id}}">Download</a>
+                    {{# } }}
+                    <a class="layui-btn layui-btn-normal layui-btn-xs layui-copyurl" data-clipboard-text="" lay-event="copy">Copy Url</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">Delete</a>
+                </script>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script>
+
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index', 'layer', 'table'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , table = layui.table
+            , layer = layui.layer //弹层
+            , laydate = layui.laydate;
+
+        table.render({
+            elem: '#LAY-table-list'
+            , url: layui.setter.baseUrl + 'DistributorUpload/GetList'
+            , cols: [[
+                  { field: 'Id', width: 70, align: 'center', title: 'ID' }
+                , { field: 'UserName', minWidth: 160, align: 'center', title: 'Distributor Name' }
+                , { field: 'MediaTypeName', width: 120, align: 'center', title: 'Media Type' }
+                , { field: 'OriginalFileName', minWidth: 200, title: 'File Name' }
+                , { field: 'ShowSize', width: 120, title: 'Size' }
+                , { field: 'AddDateValue', width: 150, title: 'Upload Time' }
+                , { field: 'Remark', minWidth: 130, title: 'Remark' }
+                , { field: 'MediaViewUrl', minWidth: 280, title: 'File Url' }
+                , { title: 'Operation', width: 300, align: 'center', fixed: 'right', toolbar: '#table-operation' }
+            ]]
+            , page: true
+            , limit: 10
+            , text: {
+                none: 'No data'
+            }
+        });
+
+
+        //监听工具条
+        table.on('tool(LAY-table-list)', function (obj) {
+            var data = obj.data;
+            var id = data.Id;
+            if (obj.event === 'del') {
+                layer.confirm("Do you want to delete this file？", { title: "Delete file", btn: ['Yes', 'No'] }, function (index) {
+                    layer.close(index);
+                    $ajaxLoadingFunc(layui.setter.baseUrl + 'DistributorUpload/Delete', { id: id }, function (res) {
+                        if (res.code === 0) {
+                            layer.msg("Delete successfully", { time: 1000, offset: 'auto' }, function (index) {
+                                layer.close(index);
+                                table.reload('LAY-table-list');
+                            });
+                        } else {
+                            LayerAlert(res.msg);
+                        }
+                    });
+                });
+
+            }
+            else if (obj.event === 'copy') {
+
+                $(".layui-copyurl").attr("data-clipboard-text", data.MediaViewUrl);
+                var clipboard = new ClipboardJS('.layui-copyurl');
+                clipboard.on('success', function (e) {
+                    LayerMsg('Copy successfully');
+                    clipboard.destroy();
+                    e.clearSelection();
+                });
+
+            } else if (obj.event === 'view') {
+
+                layer.open({
+                    type: 1,
+                    title: 'View image',
+                    area: ["600px", "500px"],
+                    shadeClose: true,
+                    end: function (index, layero) {
+                        return false;
+                    },
+                    content: '<div style="text-align:center;padding: 20px 30px;"><img src="' + data.MediaViewUrl + '" style="max-width: 500px;max-height: 410px;"/></div>'
+                });
+
+            }
+            else if (obj.event === 'play') {
+
+                layer.open({
+                    type: 2,
+                    title: 'Play video',
+                    area: ["800px", "644px"],
+                    shadeClose: true,
+                    end: function (index, layero) {
+                        return false;
+                    },
+                    maxmin: true,
+                    content: [layui.setter.baseUrl + 'DistributorUpload/Play/' + id]
+                });
+            }
+
+
+        });
+
+
+        //监听搜索
+        form.on('submit(LAY-user-front-search)', function (data) {
+            var field = data.field;
+
+            //执行重载
+            table.reload('LAY-table-list', {
+                where: field
+            });
+        });
+
+        //列表外按钮点击事件
+        var active = {
+            add: function () {
+                 layer.open({
+                    type: 2
+                    , title: 'Upload file'
+                    , area: ['600px', '400px']
+                    , content: ['@Url.Content("~/Admin/DistributorUpload/Upload")']
+                });
+            }
+        };
+
+        $('.layui-btn.layuiadmin-btn-useradmin').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+
+    });
+</script>

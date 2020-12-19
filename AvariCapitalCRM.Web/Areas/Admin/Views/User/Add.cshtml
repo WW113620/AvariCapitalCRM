@@ -1,0 +1,182 @@
+﻿
+@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@model AvariCapitalCRM.Models.Data.Account
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+
+    List<long> accessIdList = ViewBag.AccessIdList as List<long>;
+
+    int adminUserType = (int)ViewBag.AdminUserType;
+}
+<style>
+    .layui-form-label {
+        width: 130px;
+    }
+
+    .layui-form-item .layui-input, textarea.layui-textarea, layui-unselect, .layui-unselect.layui-form-select {
+        width: 350px;
+    }
+</style>
+<link href="~/Content/multiple.css" rel="stylesheet" />
+<div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 10px 30px 0 0;">
+
+    <div class="layui-card-body">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <input type="hidden" name="RoleType" value="@Model.RoleType" />
+        <div class="layui-form-item">
+            <label class="layui-form-label">Login Email</label>
+            <div class="layui-input-inline">
+                <input type="text" name="Email" lay-verify="newEmail" value="@Model.Email" lay-verType="tips" placeholder="Email" autocomplete="off" class="layui-input" maxlength="50">
+            </div>
+        </div>
+
+        @if (Model.Id == 0)
+        {
+            <div class="layui-form-item">
+                <label class="layui-form-label">Password</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="Password" lay-verify="pass" lay-verType="tips" autocomplete="off" id="LAY_password" placeholder="Password" class="layui-input" maxlength="20">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">Confirm password</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="repassword" lay-verify="repass" lay-verType="tips" placeholder="Confirm password" autocomplete="off" class="layui-input" maxlength="20">
+                </div>
+            </div>
+        }
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">Phone</label>
+            <div class="layui-input-inline">
+                <input type="text" name="Phone" lay-verify="newPhone" value="@Model.Phone" lay-verType="tips" placeholder="Phone" autocomplete="off" class="layui-input" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">First name</label>
+            <div class="layui-input-inline">
+                <input type="text" name="FirstName" lay-verify="onlyLetter" value="@Model.FirstName" lay-verType="tips" autocomplete="off" placeholder="First name" maxlength="100" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">Last name</label>
+            <div class="layui-input-inline">
+                <input type="text" name="LastName" lay-verify="onlyLetter" value="@Model.LastName" lay-verType="tips" autocomplete="off" placeholder="Last name" class="layui-input" maxlength="100">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">Access category</label>
+            <div class="layui-input-inline">
+                <select name="Categorys" lay-filter="Categorys" multiple lay-search lay-verify="required" lay-verType="tips">
+                    <option value="">Please select</option>
+                    @{
+                        var Categories = ViewBag.Categories as List<Category>;
+                        foreach (var item in Categories)
+                        {
+                            if (accessIdList != null && accessIdList.Count > 0 && accessIdList.Contains(item.Id))
+                            {
+                                <option value="@item.Id" selected="selected">@item.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+
+        @if (Model.RoleType == (int)RoleEnums.客户)
+        {
+            <div class="layui-form-item">
+                <label class="layui-form-label">Advisers</label>
+                <div class="layui-input-inline">
+                    <select name="RoleId">
+                        <option value="">Please select</option>
+                        @{
+                            var AdviserList = ViewBag.AdviserList as List<Account>;
+                            foreach (var item in AdviserList)
+                            {
+                                if (item.Id == Model.RoleId)
+                                {
+                                    <option value="@item.Id" selected="selected">@item.UserName</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.Id">@item.UserName</option>
+                                }
+
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+        }
+
+        <div class="layui-form-item">
+            <div style="text-align:center; margin-top:30px;">
+                @if (adminUserType == (int)RoleEnums.客户 || adminUserType == (int)RoleEnums.顾问)
+                {
+                    <button class="layui-btn layui-btn-primary" id="btnCancel">Cancel</button>
+                }
+                else
+                {
+                    <button class="layui-btn" lay-submit lay-filter="save">Submit</button>
+                    <button class="layui-btn layui-btn-primary" style="margin-left:30px;" id="btnCancel">Cancel</button>
+                }
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script>
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index'
+    }).use(['index', 'form', 'set'], function () {
+        var $ = layui.$
+            , layer = layui.layer
+            , form = layui.form;
+
+        $(document).on('click', '#btnCancel', function () {
+            parent.layer.closeAll();
+        });
+
+        form.on('submit(save)', function (obj) {
+            console.log(obj.field)
+            var data = obj.field;
+            var accessIds = data.Categorys;
+            if (!accessIds || accessIds.length == 0) {
+                LayerMsg("Please select category you want to access");
+                return;
+            }
+
+            data.AccessIds = accessIds.map(function (item, i) { return item }).join(",");
+
+
+            $ajaxLoadingFunc(layui.setter.baseUrl + "User/Save", data, function (res) {
+                if (res.code === 0) {
+                    layer.msg("Save successfully", { time: 1000, offset: 'auto' }, function (index) {
+                        parent.layer.closeAll();
+                        layer.close(index);
+                        parent.layui.table.reload('LAY-table-list');
+                    });
+                }
+                else {
+                    LayerAlert(res.msg);
+                }
+            });
+
+            return false;
+        });
+
+    })
+</script>

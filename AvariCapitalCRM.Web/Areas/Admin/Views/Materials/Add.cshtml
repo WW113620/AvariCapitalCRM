@@ -1,0 +1,220 @@
+﻿@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@model AvariCapitalCRM.Models.ViewModels.MaterialViewModel
+@{
+    string title = "Report Name";
+    string msg = "reports";
+    if (Model.Type == (int)MaterialTypeEnums.声明)
+    {
+        title = "Statement";
+        msg = "statements";
+    }
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+    long now = DateTime.Now.Ticks;
+}
+<style>
+    .layui-form-label {
+        width: 105px;
+    }
+    .layui-input-block{
+        margin-left:140px;
+    }
+    .layui-form-item .layui-input, textarea.layui-textarea, layui-unselect, .layui-unselect.layui-form-select {
+        width: 320px;
+    }
+
+    .layui-form-item .layui-input-inline
+    {
+        width:100%;
+    }
+</style>
+
+<link href="~/Content/multiple.css" rel="stylesheet" />
+<div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 10px 30px 0 0;">
+
+    <div class="layui-card-body">
+        <input type="hidden" name="ClientId" value="0" />
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <input type="hidden" name="Type" value="@Model.Type" />
+        <div class="layui-form-item">
+            <label class="layui-form-label">@title</label>
+            <div class="layui-input-block">
+                <input type="text" name="Name" value="@Model.Name" placeholder="Please input" lay-verify="required" autocomplete="off" class="layui-input" maxlength="100">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">Access category</label>
+            <div class="layui-input-block">
+                <select name="CategoryId" lay-verify="required">
+                    <option value="">Please select</option>
+                    @{
+                        var Categories = ViewBag.Categories as List<Category>;
+                        foreach (var item in Categories)
+                        {
+                            if (Model.CategoryId == item.Id)
+                            {
+                                <option value="@item.Id" selected="selected">@item.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block" style="margin-left:20px;">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-normal" id="SelectedFiles">Select multiple files</button>
+                    <button type="button" class="layui-btn" id="UploadFiles" style="margin-left:40px;">Start uploading</button>
+                    <div class="layui-upload-list" id="fileListDiv" style="overflow-y: auto;height: 330px;">
+                        <table class="layui-table">
+                            <thead>
+                                <tr>
+                                    <th width="200px">File name</th>
+                                    <th width="60px">Size</th>
+                                    <th width="90px">State</th>
+                                    <th width="90px">Operation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="fileList"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div style="margin-left: 35%;position: fixed;bottom: 40px;">
+                <button class="layui-btn" lay-submit lay-filter="save">Submit</button>
+                <button class="layui-btn layui-btn-primary" style="margin-left:30px;" id="btnCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script>
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index'
+    }).use(['index', 'form', 'set', 'upload'], function () {
+        var $ = layui.$
+            , layer = layui.layer
+            , upload = layui.upload
+            , form = layui.form;
+
+        $(document).on('click', '#btnCancel', function () {
+            parent.layer.closeAll();
+        });
+
+        form.on('submit(save)', function (obj) {
+            console.log(obj.field)
+            var data = obj.field;
+
+            if (!fileIds || fileIds.length == 0) {
+                LayerMsg("Please upload @msg");
+                return;
+            }
+
+            data.fileIds = fileIds;
+
+            $ajaxLoadingFunc(layui.setter.baseUrl + "Materials/SaveAdd", data, function (res) {
+                if (res.code === 0) {
+                    layer.msg("Save successfully", { time: 1000, offset: 'auto' }, function (index) {
+                        parent.layer.closeAll();
+                        layer.close(index);
+                        parent.layui.table.reload('LAY-table-list');
+                    });
+                }
+                else {
+                    LayerAlert(res.msg);
+                }
+            });
+
+            return false;
+        });
+
+        var fileIds = [];
+        var layerLoad = null;
+        var maxSize = 1024 * 500;
+        var fileListView = $('#fileList');
+        var uploadIns= upload.render({
+            elem: '#SelectedFiles'
+            , url: layui.setter.baseUrl + "Materials/Upload" 
+            , accept: 'file'
+            , multiple: true
+            , auto: false
+            , size: maxSize
+            , bindAction: '#UploadFiles'
+            , before: function (obj) {
+                layerLoad = layer.msg('Uploading in progress...', {
+                    icon: 16,
+                    time: 0,
+                    shade: 0.6
+                });
+            }
+            , choose: function (obj) {
+                var files = this.files = obj.pushFile();
+                obj.preview(function (index, file, result) {
+                    var tr = $(['<tr id="upload-' + index + '">'
+                        , '<td>' + file.name + '</td>'
+                        , '<td>' + (file.size / 1024).toFixed(1) + 'kb</td>'
+                        , '<td>Pending upload</td>'
+                        , '<td>'
+                        , '<button class="layui-btn layui-btn-xs demo-reload layui-hide">Re-upload</button>'
+                        , '<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">Delete</button>'
+                        , '</td>'
+                        , '</tr>'].join(''));
+
+                    tr.find('.demo-reload').on('click', function () {
+                        obj.upload(index, file);
+                    });
+                    
+                    tr.find('.demo-delete').on('click', function () {
+                        delete files[index]; 
+                        tr.remove();
+                        uploadIns.config.elem.next()[0].value = ''; 
+                    });
+
+                    fileListView.append(tr);
+                });
+            }
+            , done: function (res, index, upload) {
+                if (layerLoad)
+                    layer.close(layerLoad)
+                debugger
+                if (res.code == 0) {
+
+                    fileIds.push(res.Id);
+
+                    var tr = fileListView.find('tr#upload-' + index)
+                        , tds = tr.children();
+                    tds.eq(2).html('<span style="color: #5FB878;">Succeeded</span>');
+                    tds.eq(3).html('');
+                    return delete this.files[index];
+                }
+                
+                this.error(index, upload);
+            }
+            , error: function (index, upload) {
+                if (layerLoad)
+                    layer.close(layerLoad)
+                var tr = fileListView.find('tr#upload-' + index)
+                    , tds = tr.children();
+                tds.eq(2).html('<span style="color: #FF5722;">Failed</span>');
+                tds.eq(3).find('.demo-reload').removeClass('layui-hide');
+                
+            }
+        });
+
+    })
+</script>
+

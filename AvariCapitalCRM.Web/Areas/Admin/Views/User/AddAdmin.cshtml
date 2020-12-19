@@ -1,0 +1,115 @@
+﻿@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@model AvariCapitalCRM.Models.Data.Account
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+}
+<style>
+    .layui-form-label {
+        width: 120px;
+    }
+
+    .layui-form-item .layui-input, textarea.layui-textarea, .layui-form-select {
+        width: 230px !important;
+    }
+</style>
+<div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 30px 30px 0 0;">
+
+    <div class="layui-card-body">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">Login Name</label>
+            <div class="layui-input-inline">
+                <input type="text" name="UserName" lay-verify="username" lay-verType="tips" autocomplete="off" value="@Model.UserName" placeholder="User name" maxlength="100" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux" style="padding:9px 5px 9px 50px !important;">Login name only</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">Password</label>
+            <div class="layui-input-inline">
+                <input type="password" name="Password" lay-verify="pass" lay-verType="tips" autocomplete="off" id="LAY_password" placeholder="Password" class="layui-input" maxlength="20">
+            </div>
+            <div class="layui-form-mid layui-word-aux" style="padding-right:5px !important;padding-left:50px !important;">6 to 20 characters</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">Confirm password</label>
+            <div class="layui-input-inline">
+                <input type="password" name="repassword" lay-verify="repass" lay-verType="tips" placeholder="Confirm password" autocomplete="off" class="layui-input" maxlength="20">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">First Name</label>
+            <div class="layui-input-inline">
+                <input type="text" name="FirstName" value="@Model.FirstName" lay-verify="onlyLetter" lay-verType="tips" autocomplete="off" placeholder="First Name" maxlength="100" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">Last Name</label>
+            <div class="layui-input-inline">
+                <input type="text" name="LastName" value="@Model.LastName" lay-verify="onlyLetter" lay-verType="tips" autocomplete="off" placeholder="Last Name" class="layui-input" maxlength="100">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">Phone</label>
+            <div class="layui-input-inline">
+                <input type="text" name="Phone" value="@Model.Phone" lay-verify="newPhone" lay-verType="tips" placeholder="Phone" autocomplete="off" class="layui-input" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')">
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">Email</label>
+            <div class="layui-input-inline">
+                <input type="text" name="Email" value="@Model.Email" lay-verify="newEmail" lay-verType="tips" placeholder="Email" autocomplete="off" class="layui-input" maxlength="50">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div style="text-align:center; margin-top:40px;">
+                <button class="layui-btn" lay-submit lay-filter="save">Submit</button>
+                <button class="layui-btn layui-btn-primary" style="margin-left:30px;" id="btnCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+<script>
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index'
+    }).use(['index', 'form', 'set'], function () {
+        var $ = layui.$
+            , layer = layui.layer
+            , form = layui.form;
+
+        $(document).on('click', '#btnCancel', function () {
+            parent.layer.closeAll();
+        });
+
+        form.on('submit(save)', function (obj) {
+            $ajaxLoadingFunc(layui.setter.baseUrl + "User/AddSave", obj.field, function (res) {
+                if (res.code === 0) {
+                    layer.msg("Save successfully", { time: 1000, offset: 'auto' }, function (index) {
+                        parent.layer.closeAll();
+                        layer.close(index);
+                        parent.layui.table.reload('LAY-table-list');
+
+                    });
+                }
+                else {
+                    LayerAlert(res.msg);
+                }
+            });
+
+            return false;
+        });
+
+    })
+</script>

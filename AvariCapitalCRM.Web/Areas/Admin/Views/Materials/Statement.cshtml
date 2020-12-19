@@ -1,0 +1,219 @@
+﻿@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+    int AdminUserType = (int)ViewBag.AdminUserType;
+}
+<style>
+    .layui-form-label {
+        width: 120px;
+    }
+</style>
+<fieldset class="layui-elem-field layui-field-title layui-list-title">
+    <legend>Statements</legend>
+</fieldset>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-card">
+            <div class="layui-form layuiadmin-card-header-auto">
+
+                <div class="layui-form-item">
+
+                    @if (AdminUserType == (int)RoleEnums.超级管理员 || AdminUserType == (int)RoleEnums.管理员)
+                    {
+                        <div class="layui-inline">
+                            <label class="layui-form-label">Access category</label>
+                            <div class="layui-input-inline">
+                                <select name="FirstCateId" lay-filter="FirstCateId" id="FirstCateId">
+                                    <option value="">Please select</option>
+                                    @{
+                                        var categoryList = ViewBag.CategoryList as List<Category>;
+                                        if (categoryList != null && categoryList.Any())
+                                        {
+                                            foreach (var item in categoryList)
+                                            {
+                                                <option value="@item.Id">@item.Name</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">Statement</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="Name" placeholder="Statement" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline" style="margin-left:90px;">
+                        <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="LAY-user-front-search">
+                            <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                        </button>
+                    </div>
+
+                    @if (AdminUserType == (int)RoleEnums.超级管理员 || AdminUserType == (int)RoleEnums.管理员)
+                    {
+                        <div class="layui-inline" style="margin-left:20px;">
+                            <a class="layui-btn layuiadmin-btn-useradmin" data-type="add">Upload statements</a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+            <div class="layui-card-body">
+
+                <table id="LAY-table-list" lay-filter="LAY-table-list"></table>
+
+                <script type="text/html" id="table-operation-file">
+
+                    {{# if(d.MediaTypeName==@((int)MediaTypeEnums.图片)){ }}
+                    <a class="layui-btn layui-btn-xs" lay-event="view"><i class="layui-icon">&#xe64a;</i>View</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="download" href="@Url.Content("~/Admin/Materials/DownloadCloud/"){{d.Id}}">Download</a>
+                    {{# }else if(d.MediaTypeName==@((int)MediaTypeEnums.视频)){ }}
+                    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="play"><i class="layui-icon">&#xe6ed;</i>Play</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="download" href="@Url.Content("~/Admin/Materials/DownloadCloud/"){{d.Id}}">Download</a>
+                    {{# }  else { }}
+                    <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="download" href="@Url.Content("~/Admin/Materials/DownloadCloud/"){{d.Id}}">Download</a>
+                    {{# } }}
+                    <a class="layui-btn layui-btn-normal layui-btn-xs layui-copyurl" data-clipboard-text="" lay-event="copy">Copy Url</a>
+
+                    {{# if('@AdminUserType'=='@((int)RoleEnums.超级管理员)'||'@AdminUserType'=='@((int)RoleEnums.管理员)'){ }}
+                    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del"><i class="layui-icon">&#xe640;</i>Delete</a>
+                    {{# } }}
+
+
+                </script>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script>
+
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index'
+    }).use(['index', 'layer', 'table'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , table = layui.table
+            , layer = layui.layer
+            , laydate = layui.laydate;
+
+        table.render({
+            elem: '#LAY-table-list'
+            , url: layui.setter.baseUrl + 'Materials/GetList?Type='+'@((int)MaterialTypeEnums.声明)'+'&UserId=@ViewBag.UserId'
+            , cols: [[
+                { field: 'MaterialName', minWidth: 200, title: 'Statements' }
+                , { field: 'AccessName', minWidth: 250, title: 'Access category/Client name' }
+                , { field: 'OriginalFileName', minWidth: 250, title: 'FileName' }
+                , { field: 'NewFileName', minWidth: 200, title: 'New FileName' }
+                , { field: 'ShowSize', width: 150, title: 'Size' }
+                , { field: 'AddDateValue', width: 150, title: 'Upload Time' }
+                , { title: 'Operation', minWidth: 320, align: 'center', fixed: 'right', toolbar: '#table-operation-file' }
+            ]]
+            , page: true
+            , limit: 10
+            , text: {
+                none: 'No data'
+            }
+        });
+
+        table.on('tool(LAY-table-list)', function (obj) {
+            var data = obj.data;
+            var id = data.Id;
+
+            if (obj.event === 'del') {
+                layer.confirm("Do you want to delete this statement？", { title: "Delete statement", btn: ['Yes', 'No'] }, function (index) {
+                    layer.close(index);
+                    $ajaxLoadingFunc(layui.setter.baseUrl + 'Materials/DeleteFile', { id: id }, function (res) {
+                        if (res.code === 0) {
+                            layer.msg("Delete successfully", { time: 1000, offset: 'auto' }, function (index) {
+                                layer.close(index);
+                                table.reload('LAY-table-list');
+                            });
+                        } else {
+                            LayerAlert(res.msg);
+                        }
+                    });
+                });
+
+            }
+            else if (obj.event === 'copy') {
+
+                $(".layui-copyurl").attr("data-clipboard-text", data.MediaViewUrl);
+                var clipboard = new ClipboardJS('.layui-copyurl');
+                clipboard.on('success', function (e) {
+                    LayerMsg('Copy successfully');
+                    clipboard.destroy();
+                    e.clearSelection();
+                });
+
+            } else if (obj.event === 'view') {
+
+                layer.open({
+                    type: 1,
+                    title: 'View image',
+                    area: ["600px", "500px"],
+                    shadeClose: true,
+                    end: function (index, layero) {
+                        return false;
+                    },
+                    content: '<div style="text-align:center;padding: 20px 30px;"><img src="' + data.MediaViewUrl + '" style="max-width: 500px;max-height: 410px;"/></div>'
+                });
+
+            }
+            else if (obj.event === 'play') {
+                layer.open({
+                    type: 2,
+                    title: 'Play video',
+                    area: ["800px", "644px"],
+                    shadeClose: true,
+                    end: function (index, layero) {
+                        return false;
+                    },
+                    maxmin: true,
+                    content: [layui.setter.baseUrl + 'Materials/Play/' + id]
+                });
+
+            }
+
+        });
+
+
+        form.on('submit(LAY-user-front-search)', function (data) {
+            var field = data.field;
+
+            table.reload('LAY-table-list', {
+                where: field
+            });
+        });
+
+        var active = {
+
+            add: function () {
+                  layer.open({
+                    type: 2
+                    , title: 'Upload statements'
+                    , area: ['700px', '650px']
+                    , content: [layui.setter.baseUrl + 'Materials/Add?type='+ "@((int)MaterialTypeEnums.声明)"]
+                });
+            }
+        };
+
+        $('.layui-btn.layuiadmin-btn-useradmin').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+    });
+</script>

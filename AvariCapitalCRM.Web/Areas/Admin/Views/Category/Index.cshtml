@@ -1,0 +1,280 @@
+﻿@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@{
+    string title = "Access categories list";
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+}
+
+<fieldset class="layui-elem-field layui-field-title layui-list-title">
+    <legend>@title</legend>
+</fieldset>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+
+            <div class="layui-card">
+
+                <div class="layui-card-body" pad15>
+
+                    <div style="padding: 0px 24px 30px;">
+                        <div>
+                            <button class="layui-btn layui-btn-sm" name="op" data-type="refresh" id="btnRefresh"><i class="layui-icon">&#xe669;</i>Refresh</button>
+                            <button class="layui-btn layui-btn-sm" data-type="add" name="op"><i class="layui-icon">&#xe654;</i>Add</button>
+
+                            <button class="layui-btn layui-btn-sm" data-type="updata" name="op"><i class="layui-icon">&#xe642;</i>Edit</button>
+
+                            <button class="layui-btn  layui-btn-sm" data-type="del" name="op"><i class="layui-icon">&#xe640;</i>Delete</button>
+
+                            @*<button class="layui-btn layui-btn-sm" name="op" data-type="fold"><i class="layui-icon">&#xe619;</i>Collapse all</button>
+                            <button class="layui-btn layui-btn-sm" name="op" data-type="expand"><i class="layui-icon">&#xe61a;</i>Expand all</button>*@
+                        </div>
+
+                        <table id="treeTable" class="layui-table" lay-filter="treeTable"></table>
+                        <script type="text/html" id="operation">
+
+                            @*{{#  if(d.Level ==1||d.Level ==2){ }}
+                            <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="add"><i class="layui-icon">&#xe654;</i>Add</a>
+                            {{#  } else { }}
+                            <a class="layui-btn layui-btn-xs layui-btn-disabled"><i class="layui-icon">&#xe654;</i>Add</a>
+                            {{#  } }}*@
+
+                            <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon">&#xe642;</i>Edit</a>
+
+                            {{#  if(d.Level ==1){ }}
+                            <a class="layui-btn layui-btn-xs layui-btn-danger"  lay-event="del"><i class="layui-icon">&#xe640;</i>Delete</a>
+                            {{#  } else { }}
+                            <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del"><i class="layui-icon">&#xe640;</i>Delete</a>
+                            {{#  } }}
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index',
+        treetable: 'treetable-lay/treetable'
+    }).use(["index", 'layer', "treetable"], function () {
+        var $ = layui.jquery;
+        var table = layui.table;
+        var treetable = layui.treetable;
+        var layer = layui.layer;
+        //渲染表格
+        layer.load(2);
+        var renderTable = function () {
+            treetable.render({
+                treeColIndex: 1,
+                treeSpid: 0,
+                treeIdName: 'Id',
+                treePidName: 'ParentId',
+                elem: '#treeTable',
+                url: layui.setter.baseUrl+ 'Category/GetList',
+                page: false,
+                treeDefaultClose: true,
+                cols: [[
+                    {type:'radio'},
+                    { field: 'Name', minWidth: 200, title: 'Category Name' }
+                    , { title: 'Operation', align: 'center', fixed: 'right', width: 350, templet: '#operation' }
+
+                ]],
+                done: function () {
+                    layer.closeAll('loading');
+                    treetable.expandAll('#treeTable');
+                }
+            });
+        };
+
+        //监听工具条
+        table.on('tool(treeTable)', function (obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+
+            if (layEvent === 'del') {
+                del(data.Id);
+            } else if (layEvent === 'edit') {
+                layer.prompt({
+                    value: data.Name,
+                    title: 'Edit',
+                    btn: ['Yes', 'No']
+                }, function (val, index) {
+                    val = StrTrim(val);
+                    if (!val) {
+                        return false;
+                    }
+                    layer.close(index);
+                    Edit(data.Id, val);
+                });
+            }
+            else if (layEvent === 'add') {
+                layer.prompt({
+                    value: '',
+                    title: 'New',
+                    btn: ['Yes', 'No']
+                }, function (val, index) {
+                    val = StrTrim(val);
+                    if (!val) {
+                        return false;
+                    }
+                    layer.close(index);
+                    Add(val, data.Id);
+                });
+            }
+        });
+
+        $("button[name='op']").click(function () {
+            var checkStatus = table.checkStatus('treeTable');
+             var data = checkStatus.data;
+            var optype = $(this).attr('data-type');
+            switch (optype) {
+                case "add":
+                    addTop(data);
+                    break;
+                case "del":
+                    delTop(data);
+                    break;
+                case "updata":
+                    editTop(data);
+                    break;
+                case "expand":
+                    treetable.expandAll('#treeTable');
+                    break;
+                case "fold":
+                    treetable.foldAll('#treeTable');
+                    break;
+                case "refresh":
+                    renderTable();
+                    break;
+            }
+        })
+
+
+        function editTop(data) {
+            if (data.length != 1) {
+                layer.msg("Please select category");
+                return;
+            }
+
+            var id = data[0].Id;
+            var name = data[0].Name;
+            layer.prompt({
+                value: name,
+                title: 'Edit',
+                btn: ['Yes', 'No']
+            }, function (val, index) {
+                val = StrTrim(val);
+                if (!val) {
+                    return false;
+                }
+                layer.close(index);
+                    Edit(id, val);
+            });
+        }
+
+        function Edit(id, name) {
+            $ajaxLoadingFunc(layui.setter.baseUrl + "Category/Edit", { id: id, name: name }, function (res) {
+                if (res.code == 0) {
+                    layer.msg("Edit successfully", { time: 1000, offset: 'auto' }, function (index) {
+                        layer.close(index);
+                        renderTable();
+                    });
+                }else {
+                    LayerAlert(res.msg);
+                }
+            })
+        }
+
+        function addTop(data) {
+            //if (data.length != 1) {
+            //    layer.msg("Please select category");
+            //    return;
+            //}
+
+            //var id = data[0].Id;
+            //var Level = data[0].Level;
+            //if (Level == 3) {
+            //    layer.msg("Level 3 category cannot be add");
+            //    return;
+            //}
+
+            layer.prompt({
+                value: '',
+                title: 'New',
+                btn: ['Yes', 'No']
+            }, function (val, index) {
+                val = StrTrim(val);
+                if (!val) {
+                    return false;
+                }
+                layer.close(index);
+                Add(val, 0);
+            });
+        }
+
+        function Add(name,parentId) {
+            $ajaxLoadingFunc(layui.setter.baseUrl + "Category/Add", { name: name, parentId: parentId }, function (res) {
+                if (res.code == 0) {
+                    layer.msg("Add successfully", { time: 1000, offset: 'auto' }, function (index) {
+                        layer.close(index);
+                        renderTable();
+                    });
+                } else {
+                    LayerAlert(res.msg);
+                }
+            })
+        }
+
+        function delTop(data) {
+            if (data.length != 1) {
+                layer.msg("Please select category");
+                return;
+            }
+
+            var id = data[0].Id;
+            var Level = data[0].Level;
+            if (Level <= 1) {
+                layer.msg("Level 1 category cannot be deleted");
+                return;
+            }
+            del(id);
+        }
+
+        function del(id) {
+            if (!id) {
+                layer.msg("Please select category")
+                return;
+            }
+
+            layer.confirm("Are you sure to delete this category？", { title: "Delete category",  btn: ['Yes', 'No'] }, function (index) {
+                layer.close(index);
+                $ajaxLoadingFunc(layui.setter.baseUrl + 'Category/Delete', { id: id }, function (res) {
+                    if (res.code === 0) {
+                        layer.msg("Delete successfully", { time: 1000, offset: 'auto' }, function (index) {
+                            layer.close(index);
+                            renderTable();
+                        });
+                    } else {
+                        LayerAlert(res.msg);
+                    }
+                });
+            });
+        }
+
+ 
+        renderTable();
+
+    });
+
+
+</script>
+

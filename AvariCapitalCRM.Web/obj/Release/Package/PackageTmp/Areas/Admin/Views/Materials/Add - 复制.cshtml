@@ -1,0 +1,480 @@
+﻿@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@model AvariCapitalCRM.Models.ViewModels.MaterialViewModel
+@{
+    string title = "Add Materials";
+    if (Model.Id > 0)
+    {
+        title = "Edit Materials";
+    }
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+    long now = DateTime.Now.Ticks;
+}
+<style>
+    .layui-form-label {
+        width: 120px;
+    }
+
+    .btn-width100 {
+        width: 100px;
+    }
+
+    .layui-tab-title li.noEvent {
+        pointer-events: none;
+        cursor: none;
+    }
+</style>
+<fieldset class="layui-elem-field layui-field-title layui-list-title">
+    <legend>@title</legend>
+</fieldset>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+
+                <div class="layui-tab layui-tab-card" lay-filter="materialTap">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this" lay-id="1">Set material details</li>
+                        @if (Model.Id > 0)
+                        {
+                            <li lay-id="2">Upload Files</li>
+                        }
+                        else
+                        {
+                            @*<li lay-id="2" class="noEvent">Upload Files</li>*@
+                        }
+                    </ul>
+                    <div class="layui-tab-content" style="min-height: 350px;padding-bottom:50px;">
+                        <div class="layui-tab-item layui-show">
+                            <div class="layui-form" style="margin-top:40px;">
+                                <input type="hidden" value="@Model.SecondCateId" name="Id" id="hidSecondCateId" />
+                                <input type="hidden" value="@Model.ThirdCateId" name="Id" id="hidThirdCateId" />
+                                <input type="hidden" value="@Model.Id" name="Id" id="materialId" />
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">Material Name</label>
+                                    <div class="layui-input-inline" style="width:640px;">
+                                        <input type="text" name="Name" value="@Model.Name" placeholder="Please enter material name " lay-verify="required" autocomplete="off" class="layui-input" maxlength="200" style="width:100%;">
+                                    </div>
+                                </div>
+
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">Category Name</label>
+                                        <div class="layui-input-inline">
+                                            <select name="FirstCateId" lay-filter="FirstCateId" id="FirstCateId" lay-verify="required">
+                                                <option value="">First Category</option>
+                                                @{
+                                                    var categoryList = ViewBag.CategoryList as List<Category>;
+                                                    if (categoryList != null && categoryList.Any())
+                                                    {
+                                                        foreach (var item in categoryList)
+                                                        {
+                                                            if (item.Id == Model.FirstCateId)
+                                                            {
+                                                                <option value="@item.Id" selected="selected">@item.Name</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@item.Id">@item.Name</option>
+                                                            }
+
+                                                        }
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="layui-inline">
+                                        <div class="layui-input-inline">
+                                            <select name="SecondCateId" lay-filter="SecondCateId" id="SecondCateId" lay-verify="required">
+                                                <option value="">Second  Category</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <div class="layui-input-inline">
+                                            <select name="ThirdCateId" lay-filter="ThirdCateId" id="ThirdCateId" lay-verify="required">
+                                                <option value="">Third Category</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">Description</label>
+                                    <div class="layui-input-block">
+                                        <textarea name="Description" placeholder="Please enter material description " lay-verify="required" style="width: 640px;height:150px;resize:none" class="layui-textarea" maxlength="200">@Model.Description</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="layui-form-item">
+                                    <div style="margin-left: 13%;margin-top: 40px;">
+                                        <button class="layui-btn btn-width100" lay-submit lay-filter="save">Save</button>
+                                        @if (Model.Id > 0)
+                                        {
+                                            <button class="layui-btn layui-btn-normal btn-width100" lay-submit lay-filter="next">Next</button>
+                                        }
+                                        <a class="layui-btn layui-btn-primary btn-width100" lay-href="@Url.Content("~/Admin/Materials/Index?t"+now)" lay-text="Materials List">Back to list</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-tab-item">
+                            <div class="layui-progress layui-progress-big" lay-showpercent="true" id="videoProgress" style="display:none;margin-top: 30px;width: 96%;margin-left: 2%;">
+                                <div class="layui-progress-bar" lay-percent="0%"></div>
+                            </div>
+                            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                                <legend>Upload material files</legend>
+                            </fieldset>
+                            <div style="margin-left: 30px;">
+                                <button type="button" class="layui-btn  layui-btn-warm" id="UploadDocument"><i class="layui-icon"></i>Upload documents</button>
+                                <button type="button" class="layui-btn" id="UploadImage"><i class="layui-icon"></i>Upload images</button>
+                                <button type="button" class="layui-btn layui-btn-normal" id="UploadVideo"><i class="layui-icon"></i>Upload videos</button>
+                                <div style="margin-top: 10px;" id="dataBind">
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/qiniu.min.js?v=1.0"></script>
+<script src="~/Scripts/plupload/plupload.full.min.js?v=1.0"></script>
+<script>
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index', 'layer', 'set', 'element', 'upload'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , element = layui.element
+            , upload = layui.upload
+            , layer = layui.layer //弹层
+
+        element.on('tab(materialTap)', function (elem) {
+            var layId = $(this).attr('lay-id');
+            var materialId = $("#materialId").val();
+
+            if (layId == 2 && materialId>0) {
+                ajaxPostBindData();
+            }
+
+        });
+
+        //监听分类
+        form.on("select(FirstCateId)", function (data) {
+            var parentId = data.elem[data.elem.selectedIndex].value;
+            initCateList(parentId, "#SecondCateId");
+            initCateList("", "#ThirdCateId");
+        })
+        form.on("select(SecondCateId)", function (data) {
+            var parentId = data.elem[data.elem.selectedIndex].value;
+            initCateList(parentId, "#ThirdCateId");
+        })
+
+        form.on("select(ThirdCateId)", function (data) {
+            var parentId = data.elem[data.elem.selectedIndex].value;
+        })
+
+        var firstCateId = $("#FirstCateId").val();
+        if (firstCateId) {
+            initCateList(firstCateId, "#SecondCateId");
+
+            var secondCateId = $("#hidSecondCateId").val();
+            if (secondCateId) {
+                initCateList(secondCateId, "#ThirdCateId");
+            }
+        }
+
+        function initCateList(parentId, el) {
+
+            var catestr = "Second  Category";
+            var selectedId = 0;
+            switch (el) {
+                case "#SecondCateId":
+                    catestr = "Second  Category";
+                    selectedId = $("#hidSecondCateId").val();
+                    break;
+                case "#ThirdCateId":
+                    catestr = "Third Category";
+                    selectedId = $("#hidThirdCateId").val();
+                    break;
+            }
+            var html = "<option   value=''>" + catestr + "</option>";
+            if (!parentId) {
+                $(el).html(html);
+                form.render('select');
+                return false;
+            }
+
+            $.post(layui.setter.baseUrl + "Materials/GetCateListByParentId", { parentId: parentId }, function (res) {
+                if (res.code == 0) {
+                    for (var i = 0; i < res.data.length; i++) {
+                        var item = res.data[i];
+                        if (selectedId && selectedId > 0 && selectedId == item.Id) {
+                            html += "<option value='" + item.Id + "' selected='selected'>" + item.Name + "</option>";
+                        }
+                        else {
+                            html += "<option value='" + item.Id + "'>" + item.Name + "</option>";
+                        }
+                    }
+                    $(el).html(html);
+                }
+                else {
+                    $(el).html(html);
+                }
+
+                form.render('select');
+
+            })
+        }
+
+        form.on('submit(save)', function (obj) {
+            console.log(obj.field)
+
+            ajaxSubmitMaterialsData(obj.field, 1);
+        });
+
+        form.on('submit(next)', function (obj) {
+            console.log(obj.field)
+
+            ajaxSubmitMaterialsData(obj.field, 2);
+        });
+
+
+        function ajaxSubmitMaterialsData(data, type) {
+            $ajaxLoadingFunc(layui.setter.baseUrl + "Materials/Submit", data, function (res) {
+                if (res.code == 0) {
+                    if (type == 2) {
+                        $("#materialId").val(res.materialId);
+                        element.tabChange('materialTap', 2);
+                    } else {
+                        layer.msg("Save successfully", { time: 900, offset: 'auto' }, function (index) {
+                            layer.close(index);
+                            var materialId = $("#materialId").val();
+                            if (materialId>0) {
+                                $("#materialId").val(res.materialId);
+                            } else {
+                                $("#materialId").val(res.materialId);
+                                var targetUrl = layui.setter.baseUrl + "Materials/Add/" + res.materialId;
+                                location.href = targetUrl;
+                            }
+
+
+                        });
+                    }
+                } else {
+                    LayerAlert(res.msg);
+                }
+            })
+        }
+
+        function ajaxPostBindData() {
+            $.ajax({
+                url: layui.setter.baseUrl + "Materials/PartialMediaFile",
+                type: "post",
+                data: { "id": $("#materialId").val() },
+                dataType: "html",
+                success: function (evt) {
+                    $('#dataBind').html(evt);
+                }
+            });
+        }
+
+        var layerLoad = null;
+        var maxPicSize = 1024 * 500;
+           upload.render({
+             elem: '#UploadImage'
+              , url: "@ConfigHelper.WebDomainAction.TrimEnd('/')" + "/Upload/UploadImage?materialId=" + $("#materialId").val()
+               , size: maxPicSize  //kb
+            , multiple: true
+            , number:10
+            , accept: 'images'
+            , acceptMime: 'image/*'
+            , before: function (obj) {
+                layerLoad = layer.msg('Images is being uploaded, please wait ...', {
+                    icon: 16,
+                    time: 0,
+                    shade: 0.6
+                });
+            }
+            , done: function (res) {
+                console.log(res)
+                if (res.code > 0) {
+                    LayerMsg(res.msg);
+                }
+            }
+            , allDone: function (obj) { //当文件全部被提交后，才触发
+                console.log(obj.total); //得到总文件数
+                console.log(obj.successful); //请求成功的文件数
+                console.log(obj.aborted); //请求失败的文件数
+
+                if (layerLoad)
+                    layer.close(layerLoad)
+
+                layer.msg(obj.successful + " uploads succeeded and " + obj.aborted+" failed", { time: 2000, offset: 'auto' }, function (index) {
+                    layer.close(index);
+                    ajaxPostBindData()
+                });
+            }
+            , error: function () {
+                LayerAlert('Upload error');
+            }
+           });
+
+          //500mb
+        var maxDocumentSize = 1024 * 500;
+         upload.render({
+             elem: '#UploadDocument'
+             , url: "@ConfigHelper.WebDomainAction.TrimEnd('/')" + "/Upload/UploadDocument?materialId=" + $("#materialId").val()
+             , size: maxDocumentSize
+             , multiple: true
+             , number: 10
+             , accept: 'file'
+             , exts: 'zip|rar|pdf|txt|doc|docx|ppt|pptx|xls|xlsx'
+            , accept: 'images'
+            , before: function (obj) {
+                layerLoad = layer.msg('Documents is being uploaded, please wait ...', {
+                    icon: 16,
+                    time: 0,
+                    shade: 0.6
+                });
+            }
+            , done: function (res) {
+                console.log(res)
+                if (res.code > 0) {
+                    LayerMsg(res.msg);
+                }
+             }
+             , allDone: function (obj) { 
+
+                 if (layerLoad)
+                     layer.close(layerLoad)
+
+                 layer.msg(obj.successful + " uploads succeeded and " + obj.aborted + " failed", { time: 2000, offset: 'auto' }, function (index) {
+                     layer.close(index);
+                     ajaxPostBindData()
+                 });
+             }
+            , error: function () {
+                LayerAlert('Upload error');
+            }
+        });
+
+
+        //1000mb
+        var maxVideoSize = 1024 * 1000;
+        upload.render({
+            elem: '#UploadVideo'
+            , url: "@ConfigHelper.WebDomainAction.TrimEnd('/')" + "/Upload/UploadVideo?materialId=" + $("#materialId").val()
+            , accept: 'video'
+            , multiple: false
+            , acceptMime: 'video/*'
+            , size: maxVideoSize
+            , before: function (obj) {
+                 layerLoad = layer.msg('Video is being uploaded, please wait ...', {
+                     icon: 16,
+                     time: 0,
+                     shade: 0.6
+                 });
+            }
+            , done: function (res) {
+                console.log(res)
+
+                console.log(res)
+                if (res.code > 0) {
+                    LayerAlert(res.msg);
+                    return;
+                }
+
+                if (layerLoad)
+                    layer.close(layerLoad)
+
+                layer.msg("Upload successfully", { time: 1000, offset: 'auto' }, function (index) {
+                    layer.close(index);
+                    ajaxPostBindData()
+                });
+
+            }
+             , error: function (index, upload) {
+                 LayerAlert('Upload error');
+            }
+         });
+
+
+
+        @*var uploader = Qiniu.uploader({
+            disable_statistics_report: false,
+                filters: {
+                    mime_types: [
+                        { title: "video files", extensions: "mp4,rmvb,avi,mpeg" }
+                    ]
+                },
+            unique_names:true,
+            runtimes: 'html5,html4,flash',
+            browse_button: 'pickfiles',
+            dragdrop: true,
+            chunk_size: '8mb',
+            multi_selection: !(moxie.core.utils.Env.OS.toLowerCase() === "ios"),
+            uptoken: '@ViewBag.uploadToken',
+            max_retries: 3,
+            domain: '@QiniuHelper.BtkDomain',
+            get_new_uptoken: true,
+            auto_start: true,
+            log_level: 5,
+            init: {
+                'BeforeChunkUpload': function (up, file) {
+                },
+                'FilesAdded': function (up, files) {
+                },
+                'BeforeUpload': function (up, file) {
+                },
+                'UploadProgress': function (up, file) {
+                    $("#videoProgress").show();
+                    $(".layui-progress-bar").css("width", file.percent+"%");
+                    $(".layui-progress-text").text(file.percent+"%")
+                },
+                'UploadComplete': function (up, file) { //上传完成保存关联
+
+                },
+                'FileUploaded': function (up, file, info) {
+                    $("#videoProgress").hide();
+                    $(".layui-progress-bar").css("width", "0%");
+                    $(".layui-progress-text").text("0%")
+                    var newFileName = file.target_name;
+                    var size = file.size;
+                    var fileName = file.name;
+                    addVideoDB(fileName, newFileName, size);
+                },
+                'Error': function (up, err, errTip) {
+
+                }
+            }
+        })
+
+
+        function addVideoDB(fileName, newFileName, size) {
+            $.ajax({
+                url: "@ConfigHelper.WebDomainAction.TrimEnd('/')" + "/Upload/UploadVideo",
+                type: "post",
+                data: { "materialId": $("#materialId").val(), "fileName": fileName, "newFileName": newFileName,"size":size },
+                dataType: "html",
+                success: function (evt) {
+                    ajaxPostBindData();
+                }
+            });
+
+        }*@
+
+    });
+
+</script>

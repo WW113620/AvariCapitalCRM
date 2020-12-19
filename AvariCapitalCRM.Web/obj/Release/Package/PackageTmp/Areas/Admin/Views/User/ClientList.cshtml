@@ -1,0 +1,217 @@
+﻿@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+}
+
+<fieldset class="layui-elem-field layui-field-title layui-list-title">
+    <legend>Clients list</legend>
+</fieldset>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-card">
+            <div class="layui-form layuiadmin-card-header-auto">
+              
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">Login Email</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="Email" autocomplete="off" placeholder="Email" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">Phone</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="Phone" autocomplete="off" placeholder="Phone" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">Client state</label>
+                        <div class="layui-input-inline">
+                            <select name="State">
+                                <option value="">Please select</option>
+                                @{
+                                    var UserStatusList = ViewBag.UserStatusList as List<SelectOption>;
+                                    foreach (var item in UserStatusList)
+                                    {
+                                        <option value="@item.Value">@item.Desction</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-inline" style="margin-left:60px;">
+                        <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="LAY-user-front-search">
+                            <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="layui-card-body">
+
+                <table id="LAY-table-list" lay-filter="LAY-table-list"></table>
+                <script type="text/html" id="userState">
+                    {{#  if(d.State == 0){ }}
+                    <button class="layui-btn layui-btn-xs" lay-event="checkState" title="Change state">{{ d.StateName}}</button>
+                    {{#  } else { }}
+                    <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="checkState" title="Change state">{{ d.StateName}}</button>
+                    {{#  } }}
+                </script>
+                <script type="text/html" id="table-operation">
+                    {{#  if(d.State == 0||d.State == 1){ }}
+                    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="edit">Detail</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-success" lay-href="{{layui.setter.baseUrl}}Materials/Index?userId={{d.Id}}" lay-text="Investment reports">Reports</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" lay-href="{{layui.setter.baseUrl}}Materials/Statement?userId={{d.Id}}" lay-text="Statements">Statements</a>
+                    {{#  } else { }}
+
+                    {{#  } }}
+
+                </script>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script>
+
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index', 'layer', 'table'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , table = layui.table
+            , layer = layui.layer //弹层
+            , laydate = layui.laydate;
+
+        table.render({
+            elem: '#LAY-table-list'
+            , url: layui.setter.baseUrl + 'User/GetClientList'
+            , cols: [[
+                { field: 'Id', width: 70, align: 'center', title: 'ID' }
+                , { field: 'Email', minWidth: 200, title: 'Login Email' }
+                , { field: 'Phone', minWidth: 160, title: 'Phone' }
+                , { field: 'FirstName', minWidth: 160, title: 'First Name' }
+                , { field: 'LastName', minWidth: 160, title: 'Last Name' }
+                , { field: 'RoleName', width: 130, title: 'Role Name' }
+                , { field: 'AddDateValue', width: 150, title: 'Add Time' }
+                , { field: 'StateName', width: 150, title: 'State' }
+                , { title: 'Operation', width: 250, align: 'center', fixed: 'right', toolbar: '#table-operation' }
+            ]]
+            , page: true
+            , limit: 10
+            , text: {
+                none: 'No data'
+            }
+        });
+
+
+        //监听工具条
+        table.on('tool(LAY-table-list)', function (obj) {
+            var data = obj.data;
+            var id = data.Id;
+            if (obj.event === 'pwd') {
+
+                layer.open({
+                    type: 2
+                    , title: 'Change password'
+                    , area: ['580px', '380px']
+                    , content: [layui.setter.baseUrl + 'User/Password/' + id]
+                });
+
+            }
+            else if (obj.event === 'edit') {
+
+                layer.open({
+                    type: 2
+                    , title: 'View client'
+                    , area: ['600px', '620px']
+                    , content: [layui.setter.baseUrl + 'User/Add?id=' + id + "&roleType=" + data.RoleType]
+                });
+
+            }
+            else if (obj.event === 'checkState') {
+                var state = 0;
+                var message = "Is it approved by this client？";
+                if (data.State === 1) {
+                    state = 0;
+                    message = "Is it approved by this client？";
+                } else if (data.State === 0) {
+                    state = 2;
+                    message = "Do you want to lock this client？";
+                } else if (data.State === 2) {
+                    state = 0;
+                    message = "Do you want to unlock this client？";
+                }
+                layer.confirm(message, { title: "Confirm info", btn: ['Yes', 'No']}, function (index) {
+                    layer.close(index);
+                    $ajaxLoadingFunc(layui.setter.baseUrl + 'User/CheckState', { id: data.Id, state: state }, function (res) {
+                        if (res.code === 0) {
+                            layer.msg("Save successfully", { time: 1000, offset: 'auto' }, function (index) {
+                                layer.close(index);
+                                table.reload('LAY-table-list');
+                            });
+                        } else {
+                            LayerAlert(res.msg);
+                        }
+                    });
+                });
+            } else if (obj.event === 'del') {
+                layer.confirm("Do you want to delete this client？", { title: "Delete client",  btn: ['Yes', 'No'] }, function (index) {
+                    layer.close(index);
+                    $ajaxLoadingFunc(layui.setter.baseUrl + 'User/Delete', { id: id }, function (res) {
+                        if (res.code === 0) {
+                            layer.msg("Delete successfully", { time: 1000, offset: 'auto' }, function (index) {
+                                layer.close(index);
+                                table.reload('LAY-table-list');
+                            });
+                        } else {
+                            LayerAlert(res.msg);
+                        }
+                    });
+                });
+
+            }
+
+
+        });
+
+
+        //监听搜索
+        form.on('submit(LAY-user-front-search)', function (data) {
+            var field = data.field;
+
+            //执行重载
+            table.reload('LAY-table-list', {
+                where: field
+            });
+        });
+
+        //列表外按钮点击事件
+        var active = {
+            add: function () {
+                 layer.open({
+                    type: 2
+                    , title: 'Add client'
+                    , area: ['600px', '620px']
+                    , content: [layui.setter.baseUrl + 'User/Add?id=0&roleType='+ "@((int)RoleEnums.客户)"]
+                });
+            }
+        };
+
+        $('.layui-btn.layuiadmin-btn-useradmin').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+
+    });
+</script>

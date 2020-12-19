@@ -1,0 +1,120 @@
+﻿@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@model AvariCapitalCRM.Models.ViewModels.StatisticsModel
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+    ViewBag.Title = "Index";
+
+    int loginType = (int)ViewBag.UserType;
+}
+
+<link rel="stylesheet" href="~/Assets/layuiadmin/style/admin.css" media="all">
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+                        <div class="layui-card-header">Shortcuts</div>
+                        <div class="layui-card-body">
+                            <div class="layui-carousel layadmin-carousel layadmin-shortcut">
+                                @if (loginType == (int)RoleEnums.超级管理员 || loginType == (int)RoleEnums.管理员)
+                                {
+                                    @Html.Partial("_PartialAdminShortcuts")
+                                }
+                                else if (loginType == (int)RoleEnums.客户|| loginType == (int)RoleEnums.顾问)
+                                {
+                                    @Html.Partial("_PartialClientsShortcuts")
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+                        <div class="layui-card-header">Files</div>
+                        <div class="layui-card-body">
+
+                            <div class="layui-carousel layadmin-carousel layadmin-backlog">
+                                <div carousel-item>
+                                    <ul class="layui-row layui-col-space10">
+                                        <li class="layui-col-xs6">
+                                            <a class="layadmin-backlog-body">
+                                                <h3>Videos</h3>
+                                                <p><cite>@Model.Vidoes</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a class="layadmin-backlog-body">
+                                                <h3>Images</h3>
+                                                <p><cite>@Model.Images</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a class="layadmin-backlog-body">
+                                                <h3>Documents</h3>
+                                                <p><cite>@Model.Documents</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a class="layadmin-backlog-body">
+                                                <h3>Download</h3>
+                                                <p><cite>@Model.Download</cite></p>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">Overview of data</div>
+                        <div class="layui-card-body">
+
+                            <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-index-dataview">
+                                <div carousel-item id="LAY-index-dataview">
+                                    <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                                    @if (loginType == (int)RoleEnums.超级管理员 || loginType == (int)RoleEnums.管理员)
+                                    {
+                                        <div></div>
+                                        <div></div>
+                                    }
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="layui-card">
+                        <div class="layui-tab layui-tab-brief layadmin-latestData">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">Download statistics</li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+                                    <table id="LAY-index-topSearch"></table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index', 'console']);
+</script>
+

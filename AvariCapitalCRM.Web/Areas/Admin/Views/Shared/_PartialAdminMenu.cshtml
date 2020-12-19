@@ -1,0 +1,52 @@
+﻿<li data-name="home" class="layui-nav-item layui-nav-itemed">
+    <a href="javascript:;" lay-tips="Dash board" lay-direction="2">
+        <i class="layui-icon layui-icon-home"></i>
+        <cite>Dash board</cite>
+    </a>
+    <dl class="layui-nav-child">
+        <dd data-name="console" class="layui-this">
+            <a lay-href="@Url.Content("~/Admin/Home/Main")">Console</a>
+        </dd>
+    </dl>
+</li>
+
+
+<li data-name="senior" class="layui-nav-item">
+    <a lay-href="@Url.Content("~/Admin/Materials/Index")" lay-tips="Investment reports" lay-direction="2">
+        <i class="layui-icon layui-icon-survey"></i>
+        <cite>Investment reports</cite>
+    </a>
+</li>
+
+<li data-name="senior" class="layui-nav-item">
+    <a lay-href="@Url.Content("~/Admin/Materials/Statement")" lay-tips="Statements" lay-direction="2">
+        <i class="layui-icon layui-icon-read"></i>
+        <cite>Statements</cite>
+    </a>
+</li>
+
+<li data-name="senior" class="layui-nav-item">
+    <a lay-href="@Url.Content("~/Admin/Category/Index")" lay-tips="Access categories" lay-direction="2">
+        <i class="layui-icon layui-icon-tabs"></i>
+        <cite>Access categories</cite>
+    </a>
+</li>
+
+<li data-name="user" class="layui-nav-item">
+    <a href="javascript:;" lay-tips="Account Management" lay-direction="2">
+        <i class="layui-icon layui-icon-user"></i>
+        <cite>Account Management</cite>
+    </a>
+    <dl class="layui-nav-child">
+        <dd>
+            <a lay-href="@Url.Action("List","User",new {area="Admin" })">Clients List</a>
+        </dd>
+        <dd>
+            <a lay-href="@Url.Action("AdviserList","User",new {area="Admin" })">Advisers List</a>
+        </dd>
+        <dd>
+            <a lay-href="@Url.Action("AdminList","User",new {area="Admin" })">Administrators List</a>
+        </dd>
+
+    </dl>
+</li>

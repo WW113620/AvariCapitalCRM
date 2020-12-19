@@ -1,0 +1,113 @@
+﻿@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@model AvariCapitalCRM.Models.ViewModels.MaterialViewModel
+
+@if (Model != null && Model.Id > 0)
+{
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+        <legend>Materials Files</legend>
+    </fieldset>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div>
+
+                <div class="layui-card-body" style="padding:10px 0px;">
+
+                    <table id="LAY-table-file" lay-filter="LAY-table-file"></table>
+
+                    <script type="text/html" id="table-operation-file">
+
+                        {{# if(d.MediaType==@((int)MediaTypeEnums.图片)){ }}
+                        <a class="layui-btn layui-btn-xs" lay-event="view"><i class="layui-icon">&#xe64a;</i>View</a>
+                        <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="download" href="@Url.Content("~/Admin/Materials/DownloadCloud/"){{d.Id}}"><i class="layui-icon">&#xe601;</i>Download</a>
+                        {{# }else if(d.MediaType==@((int)MediaTypeEnums.视频)){ }}
+                        <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="play"><i class="layui-icon">&#xe6ed;</i>Play</a>
+                        <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="download" href="@Url.Content("~/Admin/Materials/DownloadCloud/"){{d.Id}}"><i class="layui-icon">&#xe601;</i>Download</a>
+                        {{# }  else { }}
+                        <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="download" href="@Url.Content("~/Admin/Materials/DownloadCloud/"){{d.Id}}"><i class="layui-icon">&#xe601;</i>Download</a>
+                        {{# } }}
+                        <a class="layui-btn layui-btn-normal layui-btn-xs layui-copyurl" data-clipboard-text="" lay-event="copy">Copy Url</a>
+                    </script>
+
+                </div>
+
+            </div>
+        </div>
+        <input type="hidden" value="@Model.Id" id="MaterialId" />
+    </div>
+    <script>
+        layui.use(['index', 'layer', 'table'], function () {
+            var $ = layui.$
+                , form = layui.form
+                , table = layui.table
+                , layer = layui.layer;
+
+            table.render({
+                elem: '#LAY-table-file'
+                , url: layui.setter.baseUrl + 'Materials/GetFilesList?MaterialId=' + $("#MaterialId").val()
+                , cols: [[
+                    { field: 'MediaTypeName', width: 130, align: 'center', title: 'Media Type' }
+                    , { field: 'OriginalFileName', minWidth: 350, title: 'FileName' }
+                    , { field: 'ShowSize', width: 200, title: 'Size' }
+                    , { title: 'Operation', width: 350, align: 'center', fixed: 'right', toolbar: '#table-operation-file' }
+                ]]
+                , page: true
+                , limit: 10
+                , text: {
+                    none: 'No data'
+                }
+            });
+
+            table.on('tool(LAY-table-file)', function (obj) {
+                var data = obj.data;
+                var id = data.Id;
+                var newName = data.NewFileName;
+                if (obj.event === 'del') {
+
+                }
+                else if (obj.event === 'copy') {
+
+                    $(".layui-copyurl").attr("data-clipboard-text", data.MediaViewUrl);
+                    var clipboard = new ClipboardJS('.layui-copyurl');
+                    clipboard.on('success', function (e) {
+                        LayerMsg('Copy successfully');
+                        clipboard.destroy();
+                        e.clearSelection();
+                    });
+
+                } else if (obj.event === 'view') {
+
+                    layer.open({
+                        type: 1,
+                        title: 'View image',
+                        area: ["600px", "500px"],
+                        shadeClose: true,
+                        end: function (index, layero) {
+                            return false;
+                        },
+                        content: '<div style="text-align:center;padding: 20px 30px;"><img src="' + data.MediaViewUrl + '" style="max-width: 500px;max-height: 410px;"/></div>'
+                    });
+                }
+                else if (obj.event === 'play') {
+
+                    layer.open({
+                        type: 2,
+                        title: 'Play video',
+                        area: ["800px", "644px"],
+                        shadeClose: true,
+                        end: function (index, layero) {
+                            return false;
+                        },
+                        maxmin: true,
+                        content: [layui.setter.baseUrl + 'Materials/Play/' + id]
+                    });
+
+                }
+
+            });
+
+        })
+
+    </script>
+}
+

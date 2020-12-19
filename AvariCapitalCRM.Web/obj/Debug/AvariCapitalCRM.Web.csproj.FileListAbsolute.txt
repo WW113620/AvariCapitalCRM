@@ -1,0 +1,435 @@
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Web.dll.config
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Web.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Web.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csc.exe
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csc.exe.config
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csc.rsp
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csi.exe
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csi.exe.config
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csi.rsp
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.Managed.Core.targets
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.AppContext.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Collections.Immutable.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Console.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.Compression.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.FileSystem.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.Pipes.AccessControl.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.Pipes.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Reflection.Metadata.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.AccessControl.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Claims.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Principal.Windows.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.ValueTuple.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.XmlDocument.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.XPath.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\vbc.exe
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\vbc.exe.config
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\vbc.rsp
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\VBCSCompiler.exe
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\VBCSCompiler.exe.config
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Antlr3.Runtime.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.Mvc.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.WebApi.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AutoMapper.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Logic.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Models.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Service.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.SqlServer.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\log4net.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.AspNet.Identity.Core.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Azure.KeyVault.Core.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Bcl.AsyncInterfaces.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.Cookies.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Web.Infrastructure.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.WindowsAzure.Storage.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Newtonsoft.Json.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Owin.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Qiniu.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Net.Http.Formatting.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Threading.Tasks.Extensions.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Helpers.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.WebHost.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Mvc.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Optimization.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Razor.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Deployment.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Razor.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\WebGrease.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\StackExchange.Redis.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Dapper.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Logic.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Logic.dll.config
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Models.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Models.dll.config
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Service.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Service.dll.config
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.Mvc.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.WebApi.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.WebApi.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AutoMapper.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AutoMapper.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.SqlServer.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\log4net.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.AspNet.Identity.Core.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Azure.KeyVault.Core.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Bcl.AsyncInterfaces.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.Cookies.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.WindowsAzure.Storage.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.WindowsAzure.Storage.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Newtonsoft.Json.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Net.Http.Formatting.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Threading.Tasks.Extensions.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.WebHost.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Helpers.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Mvc.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Optimization.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Razor.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Deployment.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Razor.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Antlr3.Runtime.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\StackExchange.Redis.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Dapper.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Http.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Helpers.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Mvc.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Optimization.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Razor.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.WebPages.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.csprojAssemblyReference.cache
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.csproj.CoreCompileInputs.cache
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.csproj.CopyComplete
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Web.dll.config
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Web.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Web.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csc.exe
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csc.exe.config
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csc.rsp
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csi.exe
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csi.exe.config
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csi.rsp
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.Managed.Core.targets
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.AppContext.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Collections.Immutable.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Console.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.Compression.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.FileSystem.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.Pipes.AccessControl.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.Pipes.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Reflection.Metadata.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.AccessControl.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Claims.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Principal.Windows.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.ValueTuple.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.XmlDocument.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.XPath.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\vbc.exe
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\vbc.exe.config
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\vbc.rsp
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\VBCSCompiler.exe
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\VBCSCompiler.exe.config
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Antlr3.Runtime.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.Mvc.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.WebApi.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AutoMapper.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Logic.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Models.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Service.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.SqlServer.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\log4net.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.AspNet.Identity.Core.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Azure.KeyVault.Core.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Bcl.AsyncInterfaces.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.Cookies.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Web.Infrastructure.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.WindowsAzure.Storage.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Newtonsoft.Json.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Owin.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Qiniu.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Net.Http.Formatting.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Threading.Tasks.Extensions.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Helpers.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.WebHost.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Mvc.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Optimization.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Razor.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Deployment.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Razor.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\WebGrease.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\StackExchange.Redis.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Dapper.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Logic.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Logic.dll.config
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Models.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Models.dll.config
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Service.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Service.dll.config
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.Mvc.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.WebApi.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.WebApi.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AutoMapper.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AutoMapper.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.SqlServer.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\log4net.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.AspNet.Identity.Core.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Azure.KeyVault.Core.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Bcl.AsyncInterfaces.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.Cookies.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.WindowsAzure.Storage.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.WindowsAzure.Storage.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Newtonsoft.Json.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Net.Http.Formatting.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Threading.Tasks.Extensions.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.WebHost.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Helpers.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Mvc.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Optimization.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Razor.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Deployment.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Razor.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Antlr3.Runtime.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\StackExchange.Redis.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Dapper.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Http.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Helpers.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Mvc.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Optimization.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Razor.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.WebPages.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.csprojAssemblyReference.cache
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.csproj.CoreCompileInputs.cache
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.csproj.CopyComplete
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Web.dll.config
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Web.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Web.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csc.exe
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csc.exe.config
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csc.rsp
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csi.exe
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csi.exe.config
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\csi.rsp
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.Managed.Core.targets
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.AppContext.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Collections.Immutable.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Console.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.Compression.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.FileSystem.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.Pipes.AccessControl.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.IO.Pipes.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Reflection.Metadata.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.AccessControl.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Claims.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Security.Principal.Windows.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.ValueTuple.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.XmlDocument.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.XPath.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\vbc.exe
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\vbc.exe.config
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\vbc.rsp
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\VBCSCompiler.exe
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\roslyn\VBCSCompiler.exe.config
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Antlr3.Runtime.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.Mvc.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.WebApi.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AutoMapper.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Logic.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Models.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Service.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.SqlServer.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\log4net.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.AspNet.Identity.Core.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Azure.KeyVault.Core.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Bcl.AsyncInterfaces.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.Cookies.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Web.Infrastructure.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.WindowsAzure.Storage.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Newtonsoft.Json.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Owin.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Qiniu.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Net.Http.Formatting.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Threading.Tasks.Extensions.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Helpers.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.WebHost.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Mvc.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Optimization.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Razor.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Deployment.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Razor.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\WebGrease.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\StackExchange.Redis.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Dapper.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Logic.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Logic.dll.config
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Models.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Models.dll.config
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Service.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AvariCapitalCRM.Service.dll.config
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.Mvc.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.WebApi.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Autofac.Integration.WebApi.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AutoMapper.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\AutoMapper.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\EntityFramework.SqlServer.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\log4net.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.AspNet.Identity.Core.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Azure.KeyVault.Core.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Bcl.AsyncInterfaces.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.Owin.Security.Cookies.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.WindowsAzure.Storage.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.WindowsAzure.Storage.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Newtonsoft.Json.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Net.Http.Formatting.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Threading.Tasks.Extensions.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Http.WebHost.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Helpers.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Mvc.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Optimization.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.Razor.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Deployment.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\System.Web.WebPages.Razor.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Antlr3.Runtime.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\StackExchange.Redis.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\Dapper.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Http.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Helpers.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Mvc.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Optimization.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.Razor.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.WebPages.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.csprojAssemblyReference.cache
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.csproj.CoreCompileInputs.cache
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.csproj.CopyComplete
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Web\obj\Debug\AvariCapitalCRM.Web.pdb

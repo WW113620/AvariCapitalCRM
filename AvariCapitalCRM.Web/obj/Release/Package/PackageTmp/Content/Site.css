@@ -1,0 +1,25 @@
+﻿
+a, .cursor {
+    cursor: pointer;
+}
+
+
+.layui-form-item .layui-input {
+    width: 212px;
+}
+
+.layui-unselect.layui-form-select {
+    width: 210px;
+}
+
+textarea {
+    resize: none;
+}
+
+.layui-form-mid {
+    padding: 9px 26px !important;
+}
+
+.layui-list-title {
+    margin: 30px 20px 20px;
+}

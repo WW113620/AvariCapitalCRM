@@ -1,0 +1,114 @@
+﻿
+@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+}
+<style>
+    .layui-form-label {
+        width: 100px;
+    }
+
+    .layui-form-item .layui-input, textarea.layui-textarea, layui-unselect, .layui-unselect.layui-form-select {
+        width: 350px;
+    }
+</style>
+<div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 10px 30px 0 0;">
+
+    <div class="layui-card-body" style="margin-top: 17px;">
+
+
+        <div class="layui-form-item" style="margin-bottom:10px;">
+            <label class="layui-form-label">Select File</label>
+            <div class="layui-input-inline">
+
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-normal" id="SelectedFiles">Please select a file </button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">Remark</label>
+            <div class="layui-input-inline">
+                <textarea name="Remark" id="remark" placeholder="Please enter file remark"   class="layui-textarea" style="height:120px;resize:none" maxlength="1000"></textarea>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div style="text-align:center; margin-top:30px;">
+                <button class="layui-btn" id="UploadFiles">Upload</button>
+                <button class="layui-btn layui-btn-primary" style="margin-left:30px;" id="btnCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script>
+  
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index'
+    }).use(['index', 'form', 'set', 'upload'], function () {
+        var $ = layui.$
+            , layer = layui.layer
+            , upload = layui.upload
+            , form = layui.form;
+
+        var layerLoad = null;
+        var maxSize = 1024 * 200;
+            upload.render({
+                elem: '#SelectedFiles'
+                , url: "@Url.Content("~/Admin/DistributorUpload/UploadFile")"
+                , data: {
+                    remark: $("#remark").val()
+                }
+                , multiple: true
+                , number: 10
+                , accept: 'file'
+                , size: maxSize  //kb
+                , auto: false
+                , bindAction: '#UploadFiles'
+                , before: function (obj) {
+                    this.data.remark = $("#remark").val();
+                    layerLoad = layer.msg('Images is being uploaded, please wait ...', {
+                        icon: 16,
+                        time: 0,
+                        shade: 0.6
+                    });
+                }
+                , done: function (res) {
+                    console.log(res)
+                    if (res.code > 0) {
+                        LayerMsg(res.msg);
+                    }
+                }
+                , allDone: function (obj) { 
+
+                    if (layerLoad)
+                        layer.close(layerLoad)
+
+                    layer.msg(obj.successful + " uploads succeeded and " + obj.aborted + " failed", { time: 2000, offset: 'auto' }, function (index) {
+                        parent.layer.closeAll();
+                        layer.close(index);
+                        parent.layui.table.reload('LAY-table-list');
+                    });
+                }
+                , error: function () {
+                    LayerAlert('Upload error');
+                }
+            });
+
+
+
+        $(document).on('click', '#btnCancel', function () {
+            parent.layer.closeAll();
+        });
+
+     
+
+    })
+</script>
+

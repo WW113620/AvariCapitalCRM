@@ -1,0 +1,96 @@
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Service.dll.config
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Service.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Service.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Autofac.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Models.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Dapper.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.SqlServer.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\log4net.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Newtonsoft.Json.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Qiniu.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\StackExchange.Redis.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AutoMapper.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Models.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Models.dll.config
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Autofac.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Autofac.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Dapper.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.SqlServer.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\log4net.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Newtonsoft.Json.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\StackExchange.Redis.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AutoMapper.pdb
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AutoMapper.xml
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.csprojAssemblyReference.cache
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.csproj.CoreCompileInputs.cache
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.csproj.CopyComplete
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.dll
+H:\About UI\AvariCapitalCRM\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Service.dll.config
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Service.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Service.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Autofac.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Models.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Dapper.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.SqlServer.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\log4net.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Newtonsoft.Json.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Qiniu.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\StackExchange.Redis.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AutoMapper.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Models.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Models.dll.config
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Autofac.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Autofac.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Dapper.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.SqlServer.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\log4net.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Newtonsoft.Json.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\StackExchange.Redis.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AutoMapper.pdb
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AutoMapper.xml
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.csprojAssemblyReference.cache
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.csproj.CoreCompileInputs.cache
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.csproj.CopyComplete
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.dll
+H:\Mangotech Work\Avari Capital CRM\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Service.dll.config
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Service.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Service.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Autofac.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Models.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Dapper.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.SqlServer.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\log4net.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Newtonsoft.Json.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Qiniu.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\StackExchange.Redis.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AutoMapper.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Models.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AvariCapitalCRM.Models.dll.config
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Autofac.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Autofac.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Dapper.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\EntityFramework.SqlServer.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\log4net.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\Newtonsoft.Json.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\StackExchange.Redis.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AutoMapper.pdb
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\AutoMapper.xml
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.csprojAssemblyReference.cache
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.csproj.CoreCompileInputs.cache
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.csproj.CopyComplete
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.dll
+F:\GitHub\AvariCapitalCRM\AvariCapitalCRM.Service\obj\Debug\AvariCapitalCRM.Service.pdb

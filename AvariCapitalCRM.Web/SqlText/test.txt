@@ -1,0 +1,25 @@
+﻿
+
+CREATE TABLE [dbo].[TestUser](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL primary key,
+	[UserName] [nvarchar](100) NULL,
+	[Password] [nvarchar](100) NULL,	
+	[NickName] [nvarchar](100) NULL,
+	[Phone] [nvarchar](20) NULL,
+	[Email] [nvarchar](100) NULL,
+	[AvatarUrl] [nvarchar](200) NULL,
+	[RoleID] [int] NULL  DEFAULT ((0)),
+	[State] [int] NULL DEFAULT ((0)),
+	[AddTime] [datetime] NULL
+) ON [PRIMARY]
+
+
+ CREATE TABLE [dbo].[SMSMessageLog](
+    [Id] [bigint] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[Message] [nvarchar](500) NULL,
+    [SendTo] [nvarchar](100) NULL,
+	[SendFromGuid] [nvarchar](100) NULL,
+	[SendTime] [datetime] NULL,
+	[Result] [nvarchar](200) NULL,
+    [SendType] [int] NULL,
+ )

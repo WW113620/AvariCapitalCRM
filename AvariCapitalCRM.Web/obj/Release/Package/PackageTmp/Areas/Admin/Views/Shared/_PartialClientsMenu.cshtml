@@ -1,0 +1,30 @@
+﻿@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@{
+    int UserType = (int)ViewBag.UserType;
+}
+<li data-name="senior" class="layui-nav-item">
+    <a lay-href="@Url.Content("~/Admin/Materials/Index")" lay-tips="Investment reports" lay-direction="2">
+        <i class="layui-icon layui-icon-survey"></i>
+        <cite>Investment reports</cite>
+    </a>
+</li>
+
+<li data-name="senior" class="layui-nav-item">
+    <a lay-href="@Url.Content("~/Admin/Materials/Statement")" lay-tips="Statements" lay-direction="2">
+        <i class="layui-icon layui-icon-read"></i>
+        <cite>Statements</cite>
+    </a>
+</li>
+
+@if (UserType == (int)RoleEnums.顾问)
+{
+    <li data-name="user" class="layui-nav-item">
+        <a lay-href="@Url.Action("ClientList","User",new {area="Admin" })" lay-tips="Clients List" lay-direction="2">
+            <i class="layui-icon layui-icon-user"></i>
+            <cite>Clients List</cite>
+        </a>
+    </li>
+}
+
+

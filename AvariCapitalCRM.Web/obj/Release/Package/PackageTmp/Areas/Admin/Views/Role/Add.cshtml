@@ -1,0 +1,165 @@
+﻿
+@using AvariCapitalCRM.Models.Data;
+@using AvariCapitalCRM.Models.Utils;
+@model AvariCapitalCRM.Models.Data.Role
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+}
+<style>
+    .layui-form-label {
+        width: 110px;
+    }
+
+    .layui-form-item .layui-input, textarea.layui-textarea {
+        width: 490px;
+    }
+
+    .layui-form-item .layui-input-inline, .layui-form-item .layui-inline {
+        margin-right: 0px;
+    }
+
+    .layui-form-item .layui-form-checkbox[lay-skin=primary] {
+        margin-top: 0px;
+    }
+
+    .layui-checkbox-disbaled.layui-disabled {
+        display: none;
+    }
+</style>
+<div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 30px 30px 0 0;">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">Group name</label>
+        <div class="layui-input-inline" style="width:490px;">
+            <input type="text" name="RoleName" value="@Model.RoleName" placeholder="Please enter group name " lay-verify="required" autocomplete="off" class="layui-input" maxlength="100" style="width:100%;">
+        </div>
+    </div>
+
+    <div class="layui-form-item" style="max-height:300px;overflow-y:auto">
+        <label class="layui-form-label">Access category</label>
+        <div class="layui-input-inline" style="width:490px;">
+            <table id="treeTable" class="layui-table" lay-filter="treeTable"></table>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">Remark</label>
+        <div class="layui-input-inline">
+            <textarea name="Remark" placeholder="Please enter group remark " lay-verify="required" style="height:120px;resize:none" class="layui-textarea" maxlength="200">@Model.Remark</textarea>
+        </div>
+    </div>
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div class="layui-form-item">
+        <div style="text-align:center; margin-top:20px;">
+            <button class="layui-btn" lay-submit lay-filter="save">Submit</button>
+            <button class="layui-btn layui-btn-primary" style="margin-left:30px;" id="btnCancel">Cancel</button>
+        </div>
+    </div>
+
+</div>
+<script>
+    layui.config({
+        base: '/Assets/layuiadmin/'
+        , version: true
+    }).extend({
+        index: 'lib/index'
+         ,treetable: 'treetable-lay/treetable'
+    }).use(['index', 'form', "treetable"], function () {
+        var $ = layui.$
+            , layer = layui.layer
+            , form = layui.form;
+        var table = layui.table;
+        var treetable = layui.treetable;
+
+        $(document).on('click', '#btnCancel', function () {
+            parent.layer.closeAll();
+        });
+
+        var selectedCateIds = [];
+        var permissions = "@Model.Permissions";
+        if (permissions && permissions.length > 0) {
+            for (var value of permissions.split(',')) {
+                selectedCateIds.push(parseInt(value))
+            }
+        }
+        var renderTable = function () {
+            layer.load(2);
+            treetable.render({
+                treeColIndex: 1,
+                treeSpid: 0,
+                treeIdName: 'Id',
+                treePidName: 'ParentId',
+                elem: '#treeTable',
+                url: layui.setter.baseUrl + 'Category/GetList',
+                page: false,
+                treeDefaultClose: true,
+                cols: [[
+                    { type: 'checkbox', width: 50 },
+                    { field: 'Name', minWidth: 200,  title: 'Category Name' }
+                ]],
+                done: function (res, curr, count) {
+                    layer.closeAll('loading');
+                    treetable.expandAll('#treeTable');
+                    var data = res.data;
+
+                    for (var i in res.data) {
+                        var item = res.data[i];
+                        if (item.Level == 1 || item.Level == 2) {
+                            $('tr[data-index=' + i + '] input[type="checkbox"]').prop('disabled', true);
+                            form.render('checkbox');
+                        }
+                    }
+                    $('th[data-field="0"] input[type="checkbox"]').prop('disabled', true);
+
+                    if (selectedCateIds.length > 0) {
+                        for (var i = 0; i < data.length; i++) {
+                            if (selectedCateIds.indexOf(data[i].Id) != -1) {
+                                var index = data[i]['LAY_TABLE_INDEX'];
+                                res.data[index]["LAY_CHECKED"] = 'true';
+                                $('tr[data-index=' + index + '] input[type="checkbox"]').prop('checked', true);
+                                $('tr[data-index=' + index + '] input[type="checkbox"]').next().addClass('layui-form-checked');
+
+                                form.render('checkbox');
+                            }
+                        }
+
+                    }
+
+
+                }
+            });
+        };
+        renderTable();
+
+        form.on('submit(save)', function (obj) {
+
+            var checkStatus = table.checkStatus('treeTable')
+                , checkData = checkStatus.data; //得到选中的数据
+
+            if (checkData.length === 0) {
+                layer.msg("Please select category you want to access", { time: 1200, offset: 'auto', icon: 5 });
+                return false;
+            }
+
+            var categoryIds = checkData.map(function (item, i) { return item.Id }).join(",");
+            obj.field.Permissions = categoryIds;
+            console.log(categoryIds)
+            $ajaxLoadingFunc(layui.setter.baseUrl + "Role/Submit", obj.field, function (res) {
+                if (res.code === 0) {
+                    layer.msg("Save successfully", { time: 1000, offset: 'auto' }, function (index) {
+                        parent.layer.closeAll();
+                        layer.close(index);
+                        parent.layui.table.reload('LAY-table-list');
+
+                    });
+                }
+                else {
+                    LayerAlert(res.msg);
+                }
+            });
+
+            return false;
+        });
+
+    })
+</script>

@@ -1,0 +1,48 @@
+﻿
+
+@using AvariCapitalCRM.Models.Utils;
+@model AvariCapitalCRM.Models.Data.MediaFile
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_ContentLayout.cshtml";
+    string videoUrl = (string)ViewBag.VideoUrl;
+}
+<link href="~/Scripts/video/video.css" rel="stylesheet" />
+<link href="~/Scripts/video/video-js.css" rel="stylesheet" />
+<script src="~/Scripts/video/video.min.js"></script>
+<style>
+    .video-js .vjs-big-play-button {
+        top: 45%;
+        left: 45%;
+    }
+</style>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <fieldset class="layui-elem-field layui-field-title" style="margin-bottom: 10px;">
+                    <legend>@Model.OriginalFileName</legend>
+                </fieldset>
+                <div class="layui-card-body">
+                    <div class="layui-form-item">
+                        <div id="watch-video-block">
+                            @if (!string.IsNullOrEmpty(videoUrl))
+                            {
+                                <video id="my-video" class="video-js" controls preload="auto" width="750" height="500" data-setup="{}">
+                                    <source src="@videoUrl">
+                                </video>
+                                <script type="text/javascript">
+                                    var myPlayer = videojs('my-video');
+                                    videojs("my-video").ready(function () {
+                                        var myPlayer = this;
+                                      //  myPlayer.play();
+                                    });
+                                </script>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

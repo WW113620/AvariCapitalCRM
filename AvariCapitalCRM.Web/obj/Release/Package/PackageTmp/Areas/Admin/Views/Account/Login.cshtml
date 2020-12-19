@@ -1,0 +1,232 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avari Capital CRM Login</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .login-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+            font-size: 1.6rem;
+            font-family: PingFangSC-Semibold, PingFang SC;
+        }
+
+        .login-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/Content/dist//img/bg.png') no-repeat;
+            background-size: 100% 100%;
+            z-index: -1;
+        }
+
+
+        .login-header {
+            position: absolute;
+            display: flex;
+            align-items: flex-end;
+            justify-content:space-between;
+            left: 10%;
+            right:10%;
+            top: 3%;
+        }
+
+            .login-header .logo-title {
+                margin-left: 20px;
+            }
+
+            .login-header img {
+                width: 44px;
+                height: 49px;
+            }
+        .login-header-right img {
+            height:30px;
+            width:auto;
+        }
+        .login-box {
+            width: 44rem;
+            margin-bottom: 100px;
+        }
+
+            .login-box .logo-title {
+                text-align: center;
+                margin-bottom: 2.8rem;
+            }
+
+            .login-box .logo-s-title {
+                margin-bottom: 20px;
+            }
+
+
+            .login-box .input-item {
+                width: 100%;
+                height: 56px;
+                background: #F5F6F8;
+                border-radius: 4px;
+                border: 1px solid #DEDEDE;
+                margin-bottom: 24px;
+                color: #DEDEDE;
+            }
+
+            .login-box input {
+                width: 98%;
+                height: 100%;
+                padding-left: 2%;
+                font-size: 14px;
+                border: none;
+                background: transparent;
+                outline: none;
+            }
+
+            .login-box .verity-item {
+                display: flex;
+                align-items: center;
+            }
+
+            .login-box .input-item .verity-code {
+                width: 12rem;
+                height: 100%;
+                cursor: pointer;
+            }
+
+            .login-box .input-item .pass-show {
+                font-size: 14px;
+                font-weight: 600;
+                color: rgba(102, 90, 225, 0.32);
+                margin-right: 20px;
+                cursor: pointer;
+            }
+
+            .login-box .login-btn {
+                width: 100%;
+                height: 56px;
+                line-height: 56px;
+                text-align: center;
+                background: linear-gradient(137deg, #4D38E1 0%, #B3198C 100%);
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+        @@media screen and (max-width:414px ) {
+            .login-box {
+                width: auto;
+            }
+        }
+    </style>
+
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Assets/layuiadmin/layui/layui.js"></script>
+    <script src="~/Scripts/common/public.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-bg"></div>
+        <header class="login-header">
+            <div class="login-header-left">
+                <img src="~/Content/dist/img/logo.png" alt="logo" srcset="">
+                <span class="logo-title">Avari Capital CRM</span>
+            </div>
+            <div class="login-header-right">
+                <a href="https://avaricapitalpartners.com.au"><img src="~/Content/dist/img/hreflogo.png"></a>
+            </div>
+        </header>
+        <section class="login-box">
+            <div class="logo-title">Avari Capital CRM</div>
+            <div class="logo-s-title">Administration Login</div>
+            <div class="input-item">
+                <input class="name" type="text" placeholder="User name"  id="username" maxlength="100">
+            </div>
+            <div class="input-item verity-item">
+                <input class="password" type="password" placeholder="Password" id="password"  maxlength="100">
+            </div>
+            <div class="input-item verity-item">
+                <input class="text" type="text" placeholder="Verification code"  id="captchcode" maxlength="4">
+                <img class="verity-code" src="@Url.Content("~/Admin/Account/GetCaptcha")" id="captchaimg" style="cursor:pointer;" alt="" srcset="">
+            </div>
+
+            <div class="login-btn" id="loginbtn" style="cursor:pointer;">Login</div>
+        </section>
+    </div>
+
+    <script>
+        layui.use(['layer', 'laydate'], function () {
+            var $ = layui.$
+                , layer = layui.layer //弹层
+
+                $("#captchaimg").click(function () {
+                    GetCaptcha();
+                });
+
+                function GetCaptcha() {
+                    var time = new Date().getTime();
+                    $("#captchaimg").removeAttr("src").attr("src", '@Url.Content("~/Admin/Account/GetCaptcha")?t=' + time);
+                }
+
+                $(document).keyup(function(event){
+                    if (event.keyCode == 13) {
+                        login();
+                    }
+                });
+
+                $("#loginbtn").click(function () {
+                    login();
+                });
+
+              function login() {
+                    var userName = StrTrim($("#username").val());
+                    if (userName === "") {
+                        layer.msg('Please enter your user name.');
+                        return false;
+                    }
+
+                    var password = StrTrim($("#password").val());
+                   if (password === "") {
+                        layer.msg('Please enter your password.');
+                        return false;
+                    }
+
+                    var captchcode = StrTrim($("#captchcode").val());
+                    if (captchcode === "") {
+                        layer.msg('Please enter verification code.');
+                        return false;
+                    }
+
+                    var data = { "UserName": userName, "PassWord": password, "CaptchCode": captchcode };
+                    $ajaxLoadingFunc("@Url.Content("~/Admin/Account/Verify")", data, function (res) {
+                        if (res.code == 0) {
+                            layer.msg("Login successfully", { time: 1000, offset: 'auto'}, function (index) {
+                                layer.close(index);
+                                location.href = "@Url.Content("~/Admin/Home/Index")";
+                            });
+                        } else {
+                            //layer.msg(res.msg, { time: 1200, offset: 'auto', icon: 5 });
+                            //GetCaptcha();
+                            LayerAlert(res.msg);
+                        }
+                    })
+                }
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>
